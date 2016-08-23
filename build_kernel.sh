@@ -16,7 +16,7 @@ mkdir -p ./out/done/modules/
 #cm12的配置文件
 #make O=./out cyanogen_aries_defconfig
 #Mokee 44.4
-make O=./out aries-perf-usr_defconfig
+make O=./out aries-mod-perf-usr_defconfig
 make -j4 O=./out
 
 # Copy Kernel Image and Modules
