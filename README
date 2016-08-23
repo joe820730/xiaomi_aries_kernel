@@ -1,21 +1,31 @@
+Origin kernel source is from Ivan(秋葉隨風) and Mokee OpenSource Project.
+Extended kernel patch is from siminles(https://github.com/siminles)
 
-patch功能:
+This project is based on Mokee OpenSource Project with siminles's patch.
 
--CPU超频（mi2-1.7G,2s-1.89G)
--GPU超频（400mhz→450/585mhz)
--CPU电压控制（范围:800-1300mv）
--GPU电压控制（范围:900-1200mv）
--neon的内核模式支持
--双击/滑动唤醒手机
+With these function(except functions added by siminles):
+-BFQ-v7r6 I/O scheduler
+-ZEN I/O scheduler
+-f2fs
+
+And some CVE patch
+
+siminles' patch:
+
+-CPU overclock (mi2-1.7G,2s-1.89G)
+-GPU overclock (400mhz→450/585mhz)
+-CPU voltage control (range:800-1300mv）
+-GPU voltage control (range:900-1200mv）
+-kernel side neon support
+-Double tap/Swipe to wake up
 -ARM加密算法优化补丁
--可调的关屏最大CPU频率（msm-sleeper Ver.1.3）
--额外的CPU/GPU调速器：intelliactive/simple
--默认降CPU/GPU电压带来更好的续航和降低发热
+-Additional CPU/GPU Governor：intelliactive/simple
+-Lower CPU/GPU voltage brings better battery life and lower temperature
 （cpu:all pvs ↓-75mv,gpu:LOW/NOMINAL/HIGH 945 1050 1150→900 1000 1150）
--启用一些编译器优化选项
+-Enable some compile optimization flags
 
 
-*部分代码出处：
+*Codes from:
 @XperianPro/cyanogen_modified_edition_aries内核
 @faux123：nexus4（mako）内核，
 @flar2：m7-Sense/ElementalX内核
