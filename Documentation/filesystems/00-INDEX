@@ -50,6 +50,8 @@ files.txt
 	- info on file management in the Linux kernel.
 fuse.txt
 	- info on the Filesystem in User SpacE including mount options.
+f2fs.txt
+	- info and mount options for the F2FS filesystem.
 gfs2.txt
 	- info on the Global File System 2.
 hfs.txt
