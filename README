@@ -8,7 +8,10 @@ With these function(except functions added by siminles):
 -ZEN I/O scheduler
 -f2fs
 
-And some CVE patch
+And some CVE patch:
+CVE-2016-2059
+CVE-2016-2504
+CVE-2016-5340
 
 siminles' patch:
 
