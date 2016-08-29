@@ -21,7 +21,7 @@ siminles' patch:
 -GPU voltage control (range:900-1200mv）
 -kernel side neon support
 -Double tap/Swipe to wake up
--ARM加密算法优化补丁
+-ARM crypto algorithm optimization
 -Additional CPU/GPU Governor：intelliactive/simple
 -Lower CPU/GPU voltage brings better battery life and lower temperature
 （cpu:all pvs ↓-75mv,gpu:LOW/NOMINAL/HIGH 945 1050 1150→900 1000 1150）
@@ -29,14 +29,7 @@ siminles' patch:
 
 
 *Codes from:
-@XperianPro/cyanogen_modified_edition_aries内核
-@faux123：nexus4（mako）内核，
-@flar2：m7-Sense/ElementalX内核
-@ion-storm：Unleashed-Kernel-Series内核
-
-
-使用方法(Ubuntu下):
-
-1.复制全部文件到kernel源代码根目录覆盖文件（backup目录可以不要）
-2.cd到kernel源码根目录,使用Ctrl+Alt+T打开终端，输入patch -p1 < cm-ex.patch打上补丁
-3.编译内核
+@XperianPro/cyanogen_modified_edition_aries
+@faux123：nexus4（mako）kernel
+@flar2：m7-Sense/ElementalX kernel
+@ion-storm：Unleashed-Kernel-Series
