@@ -144,6 +144,33 @@ enum {
 	SX150X_EXP4,
 };
 
+#ifdef CONFIG_ANDROID_PERSISTENT_RAM
+#define ARIES_PERSISTENT_RAM_SIZE	(SZ_1M)
+#endif
+
+#ifdef CONFIG_ANDROID_RAM_CONSOLE
+#define ARIES_RAM_CONSOLE_SIZE	(124*SZ_1K * 2)
+#endif
+
+
+#ifdef CONFIG_ANDROID_PERSISTENT_RAM
+void __init aries_add_persistent_ram(void);
+#else
+static inline void __init aries_add_persistent_ram(void)
+{
+	/* empty */
+}
+#endif
+
+#ifdef CONFIG_ANDROID_RAM_CONSOLE
+void __init aries_add_ramconsole_devices(void);
+#else
+static inline void __init aries_add_ramconsole_devices(void)
+{
+	/* empty */
+}
+#endif
+
 extern struct msm_rtb_platform_data apq8064_rtb_pdata;
 extern struct msm_cache_dump_platform_data apq8064_cache_dump_pdata;
 #endif
