@@ -58,31 +58,9 @@ void __init aries_reserve(void)
 }
 
 #ifdef CONFIG_ANDROID_RAM_CONSOLE
-static char bootreason[128] = {0,};
-int __init aries_boot_reason(char *s)
-{
-	int n;
-
-	if (*s == '=')
-		s++;
-	n = snprintf(bootreason, sizeof(bootreason),
-		 "Boot info:\n"
-		 "Last boot reason: %s\n", s);
-	bootreason[n] = '\0';
-	return 1;
-}
-__setup("bootreason", aries_boot_reason);
-
-struct ram_console_platform_data ram_console_pdata = {
-	.bootinfo = bootreason,
-};
-
 static struct platform_device ram_console_device = {
 	.name = "ram_console",
-	.id = -1,
-	.dev = {
-		.platform_data = &ram_console_pdata,
-	}
+	.id = -1
 };
 
 void __init aries_add_ramconsole_devices(void)

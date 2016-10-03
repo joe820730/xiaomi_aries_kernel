@@ -152,6 +152,7 @@ enum {
 #define ARIES_RAM_CONSOLE_SIZE	(124*SZ_1K * 2)
 #endif
 
+void __init aries_reserve(void);
 
 #ifdef CONFIG_ANDROID_PERSISTENT_RAM
 void __init aries_add_persistent_ram(void);

@@ -752,6 +752,7 @@ static void __init apq8064_reserve(void)
 	apq8064_set_display_params(prim_panel_name, ext_panel_name,
 		ext_resolution);
 	msm_reserve();
+    aries_reserve();
 }
 
 static void __init apq8064_early_reserve(void)
