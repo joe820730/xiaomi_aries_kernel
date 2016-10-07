@@ -947,7 +947,7 @@ int bdi_writeback_thread(void *data)
 	 */
 	set_user_nice(current, 0);
 
-	trace_writeback_thread_start(bdi);
+//	trace_writeback_thread_start(bdi);
 
 	while (!kthread_freezable_should_stop(NULL)) {
 		/*
@@ -985,7 +985,7 @@ int bdi_writeback_thread(void *data)
 	if (!list_empty(&bdi->work_list))
 		wb_do_writeback(wb, 1);
 
-	trace_writeback_thread_stop(bdi);
+//	trace_writeback_thread_stop(bdi);
 	return 0;
 }
 
