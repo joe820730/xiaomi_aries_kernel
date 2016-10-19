@@ -471,8 +471,10 @@ struct mxt_data {
 	struct mxt_wake_common wake_common;
 	struct mxt_dt2w dt2w;
 	struct mxt_s2w s2w;
+#endif
 };
 
+#ifdef CONFIG_S2W
 static ssize_t dt2w_enabled_show(struct device *dev,
 				struct device_attribute *attr, char *buf)
 {
@@ -596,7 +598,6 @@ static struct attribute *s2w_attrs[] = {
 	&dev_attr_s2w_end.attr,
 	NULL
 };
-
 
 static struct attribute *dt2w_attrs[] = {
 	&dev_attr_dt2w_enabled.attr,
