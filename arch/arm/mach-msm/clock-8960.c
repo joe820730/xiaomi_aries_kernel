@@ -6649,13 +6649,13 @@ static void __init reg_init(void)
 /* 创建pll超频方法 */
 extern void configure_pllOC(struct pll_config *config, struct pll_config_regs *regs, u32 ena_fsm_mode);
 
-void __ref SetGPUpll_config(u32 loc, unsigned long freq)
+void __ref SetGPUpll_config(u32 loc, unsigned int freq)
 {
 	pll15_config.l = (loc | BVAL(31, 7, 0x620));
 	pll15_config.m = 0x1;
 	pll15_config.n = 0x3;
 	configure_pllOC(&pll15_config, &pll15_regs, 0);
-	printk("ElementalX: set GPU OC %ld", freq / 1000000);
+	printk("ElementalX: set GPU OC %d", freq / 1000000);
 }
 
 struct clock_init_data msm8960_clock_init_data __initdata;

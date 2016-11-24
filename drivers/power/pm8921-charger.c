@@ -2305,8 +2305,7 @@ static irqreturn_t usbin_valid_irq_handler(int irq, void *data)
 		is_usb_chg_plugged_in(the_chip), usb_target_ma);
 	if (usb_target_ma)
 		schedule_delayed_work(&the_chip->vin_collapse_check_work,
-				      round_jiffies_relative(msecs_to_jiffies
-						(VIN_MIN_COLLAPSE_CHECK_MS)));
+			      msecs_to_jiffies(VIN_MIN_COLLAPSE_CHECK_MS));
 	else
 	    handle_usb_insertion_removal(data);
 	return IRQ_HANDLED;
